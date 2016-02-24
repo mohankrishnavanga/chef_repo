@@ -19,7 +19,7 @@ service 'httpd' do
   action [:enable, :start]
 end
 
-file '/var/ww/html/index.html' do
+file '/var/www/html/index.html' do
   content '<html>
   <body>
    <h1> Food is ready!!!</h1>
