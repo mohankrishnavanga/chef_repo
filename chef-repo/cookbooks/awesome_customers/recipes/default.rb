@@ -6,64 +6,112 @@
 group 'bawarchi'
 
 user 'bawarchi' do
-  home '/home/bawarchi'
-  group 'bawarchi'
-  shell '/bin/bash'
+
+ home '/home/bawarchi'
+
+ group 'bawarchi'
+
+ shell '/bin/bash'
+
 end
 
+
 package 'httpd' do
-  action :install
+
+ action :install
+
 end
 
 service 'httpd' do
-  action [:enable, :start]
+
+ action [:enable, :start]
+
 end
+
+
 
 file '/var/www/html/index.html' do
-  content '<html>
-  <body>
-   <h1> Food is ready!!!</h1>
-  </body>
-  </html>'
-end
+
+ content '<html>
+
+ <body>
+
+ <h1>Food is ready!!!</h1>
+
+ </body>
+
+ </html>'
+
+ end
 
 service 'iptables' do
-  action :stop
+
+ action :stop
+
 end
 
+
+
 directory '/var/www/html/bawarchi/' do
-owner 'bawarchi'
-group 'bawarchi'
-mode '0755'
-action :create
+
+ owner 'bawarchi'
+
+ group 'bawarchi'
+
+ mode '0755'
+
+ action :create
+
 end
 
 directory '/var/www/html/bawarchi/meals' do
-owner 'bawarchi'
-group 'bawarchi'
-mode '0755'
-action :create
+
+ owner 'bawarchi'
+
+ group 'bawarchi'
+
+ mode '0755'
+
+ action :create
+
 end
 
 directory '/var/www/html//bawarchi/tiffins' do
-owner 'bawarchi'
-group 'bawarchi'
-mode '0755'
-action :create
+
+ owner 'bawarchi'
+
+ group 'bawarchi'
+
+ mode '0755'
+
+ action :create
+
 end
 
 remote_file '/var/www/html/bawarchi/meals/biryani.txt' do
-source 'https://s3-ap-southeast-1.amazonaws.com/thelonebucket-bucket/meals/biryani.txt'
-owner 'bawarchi'
-group 'bawarchi'
-mode '0755'
-action :create
+
+ source 'https://s3-us-west-2.amazonaws.com/<bucketname>-bucket/meals/biryani.txt'
+
+ owner 'bawarchi'
+
+ group 'bawarchi'
+
+ mode '0755'
+
+ action :create
+
 end
 
 remote_file '/var/www/html/bawarchi/tiffins/dosa.txt' do
-source 'https://s3-ap-southeast-1.amazonaws.com/thelonebucket-bucket/tiffins/dosa.txt'
-owner 'bawarchi'
-group 'bawarchi'
-mode '0755'
-action :create
+
+ source 'https://s3-us-west-2.amazonaws.com/<bucketname>-bucket/tiffins/dosa.txt'
+
+ owner 'bawarchi'
+
+ group 'bawarchi'
+
+ mode '0755'
+
+ action :create
+
 end
