@@ -90,7 +90,7 @@ end
 
 remote_file '/var/www/html/bawarchi/meals/biryani.txt' do
 
- source 'https://s3-us-west-2.amazonaws.com/<bucketname>-bucket/meals/biryani.txt'
+ source 'https://s3-ap-southeast-1.amazonaws.com/thelonebucket-bucket/meals/biryani.txt'
 
  owner 'bawarchi'
 
@@ -104,7 +104,7 @@ end
 
 remote_file '/var/www/html/bawarchi/tiffins/dosa.txt' do
 
- source 'https://s3-us-west-2.amazonaws.com/<bucketname>-bucket/tiffins/dosa.txt'
+ source 'https://s3-ap-southeast-1.amazonaws.com/thelonebucket-bucket/tiffins/dosa.txt'
 
  owner 'bawarchi'
 
