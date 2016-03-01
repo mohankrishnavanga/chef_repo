@@ -1,11 +1,11 @@
-# See https://docs.getchef.com/config_rb_knife.html for more information on knife configuration options
+# See http://docs.chef.io/config_rb_knife.html for more information on knife configuration options
 
 current_dir = File.dirname(__FILE__)
 log_level                :info
 log_location             STDOUT
-node_name                "mk_admin"
-client_key               "#{current_dir}/mk_admin.pem"
-validation_client_name   "tls-validator"
-validation_key           "#{current_dir}/tls-validator.pem"
-chef_server_url          "https://ec2-54-169-210-187.ap-southeast-1.compute.amazonaws.com/organizations/tls"
+node_name                "theloneranger"
+client_key               "#{current_dir}/theloneranger.pem"
+validation_client_name   "lonestudios-validator"
+validation_key           "#{current_dir}/lonestudios-validator.pem"
+chef_server_url          "https://api.chef.io/organizations/lonestudios"
 cookbook_path            ["#{current_dir}/../cookbooks"]
