@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 powershell_script 'Install IIS' do
-  code 'Add-WindowsFeature Web-Server'
+  code 'Add-WindowsFeature Web-Server -IncludeAllSubFeature -force'
   guard_interpreter :powershell_script
   not_if "(Get-WindowsFeature -Name Web-Server).InstallState -eq 'Installed'"
 end
